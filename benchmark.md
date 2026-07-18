@@ -36,31 +36,20 @@ uv run --no-sync python benchmark.py newton_sah_cubql
 
 | PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
 |------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |      83.66ms |      83.43ms |      79.67ms |      84.80ms |       1.26ms |
-| newton_lbvh_sah                          |   20 |      78.37ms |      78.16ms |      74.71ms |      79.39ms |       1.13ms |
-| newton_lbvh_cubql                        |   20 |      77.17ms |      77.02ms |      73.58ms |      78.34ms |       1.12ms |
-| newton_sah_lbvh                          |   20 |      75.98ms |      76.24ms |      73.78ms |      78.11ms |       1.10ms |
-| newton_sah_sah                           |   20 |      70.87ms |      71.16ms |      68.83ms |      72.85ms |       1.01ms |
-| newton_sah_cubql                         |   20 |      69.62ms |      69.96ms |      67.62ms |      71.74ms |       1.07ms |
-
-## H200
-
-| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
-|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |     124.64ms |     124.04ms |     118.27ms |     126.26ms |       2.25ms |
-| newton_lbvh_sah                          |   20 |     113.43ms |     112.75ms |     107.44ms |     114.52ms |       1.97ms |
-| newton_lbvh_cubql                        |   20 |     103.17ms |     102.64ms |      97.78ms |     104.08ms |       1.72ms |
-| newton_sah_lbvh                          |   20 |     113.62ms |     114.01ms |     110.54ms |     116.56ms |       1.69ms |
-| newton_sah_sah                           |   20 |     103.08ms |     103.26ms |     100.09ms |     105.17ms |       1.38ms |
-| newton_sah_cubql                         |   20 |      93.07ms |      93.16ms |      90.06ms |      95.15ms |       1.29ms |
+| newton_lbvh_lbvh                         |   20 |      38.05ms |      38.07ms |      36.58ms |      38.86ms |       0.62ms |
+| newton_lbvh_sah                          |   20 |      32.85ms |      32.78ms |      31.42ms |      33.37ms |       0.54ms |
+| newton_lbvh_cubql                        |   20 |      30.44ms |      30.34ms |      28.99ms |      30.87ms |       0.53ms |
+| newton_sah_lbvh                          |   20 |      35.00ms |      35.17ms |      34.16ms |      36.16ms |       0.63ms |
+| newton_sah_sah                           |   20 |      30.17ms |      30.19ms |      29.18ms |      30.94ms |       0.51ms |
+| newton_sah_cubql                         |   20 |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
 
 ## RTX Pro 6000
 
 | PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
 |------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |     285.16ms |     284.27ms |     271.59ms |     289.44ms |       4.92ms |
-| newton_lbvh_sah                          |   20 |     254.43ms |     252.80ms |     240.66ms |     256.87ms |       4.69ms |
-| newton_lbvh_cubql                        |   20 |     236.22ms |     234.70ms |     222.42ms |     238.27ms |       4.44ms |
-| newton_sah_lbvh                          |   20 |     261.71ms |     262.52ms |     255.15ms |     268.90ms |       3.98ms |
-| newton_sah_sah                           |   20 |     232.60ms |     233.08ms |     225.63ms |     238.16ms |       3.53ms |
-| newton_sah_cubql                         |   20 |     214.78ms |     215.15ms |     208.00ms |     220.03ms |       3.35ms |
+| newton_lbvh_lbvh                         |   20 |     151.55ms |     152.14ms |     147.77ms |     155.57ms |       2.21ms |
+| newton_lbvh_sah                          |   20 |     133.81ms |     133.87ms |     129.58ms |     136.33ms |       1.85ms |
+| newton_lbvh_cubql                        |   20 |     118.58ms |     118.53ms |     113.97ms |     120.91ms |       1.84ms |
+| newton_sah_lbvh                          |   20 |     139.04ms |     139.65ms |     136.48ms |     144.15ms |       2.71ms |
+| newton_sah_sah                           |   20 |     122.68ms |     122.90ms |     120.04ms |     126.18ms |       2.14ms |
+| newton_sah_cubql                         |   20 |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
