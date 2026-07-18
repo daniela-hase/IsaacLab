@@ -27,13 +27,6 @@
         "functions": ["backward"]
     },
     {
-        "_comment": "=== USD (verified working) ===",
-        "domain": "USD",
-        "color": "0x795548",
-        "module": "pxr.UsdGeom",
-        "functions": ["Xform", "Mesh", "Sphere", "Cube"]
-    },
-    {
         "_comment": "=== ISAACLAB ENVIRONMENTS ===",
         "domain": "IsaacLab-Env",
         "color": "0x9C27B0",
