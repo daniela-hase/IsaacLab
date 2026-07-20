@@ -439,7 +439,7 @@ class RenderBenchmarkEnv(DirectRLEnv):
                 img = cam.float()
                 if img.max() > 1.5:
                     img = img / 255.0
-                save_images_to_file(img[:, ..., :3], f"render_benchmark_{data_type}.png")
+                save_images_to_file(img[:, ..., :3], f"render_benchmark_{data_type}.{self.common_step_counter:06d}.png")
             except Exception as e:
                 print(f"[render_benchmark] write_image_to_file failed: {e}")
         return {"policy": torch.zeros((self.num_envs, 1), device=self.device)}

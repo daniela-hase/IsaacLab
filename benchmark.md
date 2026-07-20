@@ -1,8 +1,7 @@
 # Setup Benchmark
 
 ```bash
-git clone https://github.com/daniela-hase/IsaacLab.git
-git checkout dev/benchmark-franka-cabinet
+git clone -b dev/benchmark-franka-cabinet https://github.com/daniela-hase/IsaacLab.git
 
 uv venv
 uv pip install cmake==3.31.6
@@ -23,11 +22,11 @@ sudo apt install -y nsight-systems-cli
 # Run Benchmark
 ```bash
 source .venv/bin/activate
-python benchmark.py newton_sah_cubql
+python scripts/benchmarks/benchmark_renderer.py newton_sah_cubql
 
 # or
 
-uv run --no-sync python benchmark.py newton_sah_cubql
+uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubql
 ```
 
 # Benchmark Results
