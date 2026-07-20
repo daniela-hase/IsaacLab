@@ -3,7 +3,7 @@
 ```bash
 git clone -b dev/benchmark-franka-cabinet https://github.com/daniela-hase/IsaacLab.git
 
-uv venv
+uv venv --python 3.12
 uv pip install cmake==3.31.6
 
 source .venv/bin/activate
@@ -43,6 +43,17 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 | newton_sah_cubql                         |   20 |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
 
 ## RTX Pro 6000
+
+| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
+| newton_lbvh_lbvh                         |   20 |      29.99ms |      30.08ms |      29.22ms |      30.77ms |       0.42ms |
+| newton_lbvh_sah                          |   20 |      26.51ms |      26.50ms |      25.65ms |      26.99ms |       0.36ms |
+| newton_lbvh_cubql                        |   20 |      23.56ms |      23.53ms |      22.61ms |      23.97ms |       0.35ms |
+| newton_sah_lbvh                          |   20 |      27.49ms |      27.62ms |      26.98ms |      28.52ms |       0.54ms |
+| newton_sah_sah                           |   20 |      24.31ms |      24.33ms |      23.74ms |      24.98ms |       0.43ms |
+| newton_sah_cubql                         |   20 |      21.42ms |      21.48ms |      20.78ms |      22.09ms |       0.39ms |
+
+## RTX Pro 6000 1/4 MIG 1g.24gb
 
 | PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
 |------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
