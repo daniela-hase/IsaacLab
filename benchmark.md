@@ -35,6 +35,7 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 |------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|
 | NVIDIA RTX Pro 6000                      |   20 |   3.13 Gpx/s |      21.42ms |      21.48ms |      20.78ms |      22.09ms |       0.39ms |
 | NVIDIA B200                              |   20 |   2.42 Gpx/s |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
+| NVIDIA L40                               |   20 |   1.55 Gpx/s |      43.22ms |      43.39ms |      41.66ms |      44.57ms |       0.81ms |
 | NVIDIA GH200                             |   20 |   1.26 Gpx/s |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
 | NVIDIA RTX Pro 6000 1/4 MIG 1g.24gb      |   20 |   0.62 Gpx/s |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
 
@@ -63,6 +64,15 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 | newton_sah_sah                           |   20 |      60.00ms |      60.07ms |      57.87ms |      61.64ms |       1.02ms |
 | newton_sah_cubql                         |   20 |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
 
+## NVIDIA L40
+| PROFILE                                  | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|
+| newton_lbvh_lbvh                         |   20 |   1.09 Gpx/s |      61.52ms |      61.46ms |      59.08ms |      62.80ms |       1.03ms |
+| newton_lbvh_sah                          |   20 |   1.26 Gpx/s |      53.42ms |      53.20ms |      50.90ms |      54.25ms |       0.93ms |
+| newton_lbvh_cubql                        |   20 |   1.40 Gpx/s |      47.81ms |      47.57ms |      45.38ms |      48.47ms |       0.87ms |
+| newton_sah_lbvh                          |   20 |   1.19 Gpx/s |      56.36ms |      56.62ms |      54.84ms |      58.46ms |       1.05ms |
+| newton_sah_sah                           |   20 |   1.37 Gpx/s |      48.82ms |      48.92ms |      47.16ms |      50.22ms |       0.84ms |
+| newton_sah_cubql                         |   20 |   1.55 Gpx/s |      43.22ms |      43.39ms |      41.66ms |      44.57ms |       0.81ms |
 
 ## NVIDIA RTX Pro 6000
 
