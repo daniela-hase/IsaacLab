@@ -31,13 +31,12 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 
 # Newton SAH/cuBQL Benchmark Results (1024 envs, 256x256)
 
-| GPU                                      | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
-|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| NVIDIA RTX Pro 6000                      |   20 |      21.42ms |      21.48ms |      20.78ms |      22.09ms |       0.39ms |
-| NVIDIA B200                              |   20 |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
-| NVIDIA GH200                             |   20 |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
-| NVIDIA RTX Pro 6000 1/4 MIG 1g.24gb      |   20 |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
-
+| GPU                                      | SIZE |   Gpx/s    |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|------------|--------------|--------------|--------------|--------------|--------------|
+| NVIDIA RTX Pro 6000                      |   20 | 3.13 Gpx/s |      21.42ms |      21.48ms |      20.78ms |      22.09ms |       0.39ms |
+| NVIDIA B200                              |   20 | 2.42 Gpx/s |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
+| NVIDIA GH200                             |   20 | 1.26 Gpx/s |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
+| NVIDIA RTX Pro 6000 1/4 MIG 1g.24gb      |   20 | 0.62 Gpx/s |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
 
 # Full Sweep Benchmark Results
 
