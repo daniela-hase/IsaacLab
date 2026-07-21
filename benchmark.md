@@ -38,7 +38,8 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 | NVIDIA GH200                             |   20 |   1.26 Gpx/s |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
 | NVIDIA RTX Pro 6000 1/4 MIG 1g.24gb      |   20 |   0.62 Gpx/s |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
 
-# Full Sweep Benchmark Results
+<details>
+    <summary>Full Sweep Benchmark Results</summary>
 
 ## NVIDIA B200
 
@@ -84,3 +85,5 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 | newton_sah_lbvh                          |   20 |     139.04ms |     139.65ms |     136.48ms |     144.15ms |       2.71ms |
 | newton_sah_sah                           |   20 |     122.68ms |     122.90ms |     120.04ms |     126.18ms |       2.14ms |
 | newton_sah_cubql                         |   20 |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
+
+</details>
