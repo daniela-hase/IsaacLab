@@ -282,23 +282,24 @@ for profile_name in profiles:
 benchmark_faled = False
 print("")
 print(
-    "| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |"  # noqa: E501
+    "| PROFILE                                  | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |"  # noqa: E501
 )
 print(
-    "|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|"  # noqa: E501
+    "|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|"  # noqa: E501
 )
 for profile_name, results in all_results.items():
     if results:
+        gpxs = 1000 / results['median'] * (1024 * 256 * 256) / 1000000000
         print(
-            f"| {profile_name:<40} | {results['size']:>4} | {results['median']:>10.2f}ms | {results['mean']:>10.2f}ms | {results['min']:>10.2f}ms | {results['max']:>10.2f}ms | {results['stdev']:>10.2f}ms |"  # noqa: E501
+            f"| {profile_name:<40} | {results['size']:>4} | {gpxs:>6.2f} Gpx/s | {results['median']:>10.2f}ms | {results['mean']:>10.2f}ms | {results['min']:>10.2f}ms | {results['max']:>10.2f}ms | {results['stdev']:>10.2f}ms |"  # noqa: E501
         )
     else:
         print(
-            f"| {profile_name:<40} |                                      FAILED                                     |"
+            f"| {profile_name:<40} |                                             FAILED                                            |"
         )
         benchmark_faled = True
 print(
-    "|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|"  # noqa: E501
+    "|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|"  # noqa: E501
 )
 print("")
 if benchmark_faled:
