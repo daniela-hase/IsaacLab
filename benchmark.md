@@ -42,27 +42,27 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 <details>
     <summary>Full Sweep Benchmark Results</summary>
 
+## NVIDIA RTX Pro 6000
+
+| GPU                                      | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|
+| newton_lbvh_lbvh                         |   20 |   2.24 Gpx/s |      29.99ms |      30.08ms |      29.22ms |      30.77ms |       0.42ms |
+| newton_lbvh_sah                          |   20 |   2.53 Gpx/s |      26.51ms |      26.50ms |      25.65ms |      26.99ms |       0.36ms |
+| newton_lbvh_cubql                        |   20 |   2.85 Gpx/s |      23.56ms |      23.53ms |      22.61ms |      23.97ms |       0.35ms |
+| newton_sah_lbvh                          |   20 |   2.44 Gpx/s |      27.49ms |      27.62ms |      26.98ms |      28.52ms |       0.54ms |
+| newton_sah_sah                           |   20 |   2.76 Gpx/s |      24.31ms |      24.33ms |      23.74ms |      24.98ms |       0.43ms |
+| newton_sah_cubql                         |   20 |   3.13 Gpx/s |      21.42ms |      21.48ms |      20.78ms |      22.09ms |       0.39ms |
+
 ## NVIDIA B200
 
-| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
-|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |      38.05ms |      38.07ms |      36.58ms |      38.86ms |       0.62ms |
-| newton_lbvh_sah                          |   20 |      32.85ms |      32.78ms |      31.42ms |      33.37ms |       0.54ms |
-| newton_lbvh_cubql                        |   20 |      30.44ms |      30.34ms |      28.99ms |      30.87ms |       0.53ms |
-| newton_sah_lbvh                          |   20 |      35.00ms |      35.17ms |      34.16ms |      36.16ms |       0.63ms |
-| newton_sah_sah                           |   20 |      30.17ms |      30.19ms |      29.18ms |      30.94ms |       0.51ms |
-| newton_sah_cubql                         |   20 |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
-
-## NVIDIA GH200
-
-| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
-|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |      74.59ms |      74.52ms |      71.68ms |      76.08ms |       1.21ms |
-| newton_lbvh_sah                          |   20 |      65.77ms |      65.61ms |      62.93ms |      66.89ms |       1.06ms |
-| newton_lbvh_cubql                        |   20 |      59.00ms |      58.71ms |      55.95ms |      59.82ms |       1.05ms |
-| newton_sah_lbvh                          |   20 |      68.24ms |      68.49ms |      66.29ms |      70.41ms |       1.19ms |
-| newton_sah_sah                           |   20 |      60.00ms |      60.07ms |      57.87ms |      61.64ms |       1.02ms |
-| newton_sah_cubql                         |   20 |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
+| GPU                                      | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|
+| newton_lbvh_lbvh                         |   20 |   1.76 Gpx/s |      38.05ms |      38.07ms |      36.58ms |      38.86ms |       0.62ms |
+| newton_lbvh_sah                          |   20 |   2.04 Gpx/s |      32.85ms |      32.78ms |      31.42ms |      33.37ms |       0.54ms |
+| newton_lbvh_cubql                        |   20 |   2.20 Gpx/s |      30.44ms |      30.34ms |      28.99ms |      30.87ms |       0.53ms |
+| newton_sah_lbvh                          |   20 |   1.92 Gpx/s |      35.00ms |      35.17ms |      34.16ms |      36.16ms |       0.63ms |
+| newton_sah_sah                           |   20 |   2.22 Gpx/s |      30.17ms |      30.19ms |      29.18ms |      30.94ms |       0.51ms |
+| newton_sah_cubql                         |   20 |   2.42 Gpx/s |      27.70ms |      27.79ms |      26.80ms |      28.57ms |       0.51ms |
 
 ## NVIDIA L40
 | PROFILE                                  | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
@@ -74,26 +74,26 @@ uv run --no-sync python scripts/benchmarks/benchmark_renderer.py newton_sah_cubq
 | newton_sah_sah                           |   20 |   1.37 Gpx/s |      48.82ms |      48.92ms |      47.16ms |      50.22ms |       0.84ms |
 | newton_sah_cubql                         |   20 |   1.55 Gpx/s |      43.22ms |      43.39ms |      41.66ms |      44.57ms |       0.81ms |
 
-## NVIDIA RTX Pro 6000
+## NVIDIA GH200
 
-| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
-|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |      29.99ms |      30.08ms |      29.22ms |      30.77ms |       0.42ms |
-| newton_lbvh_sah                          |   20 |      26.51ms |      26.50ms |      25.65ms |      26.99ms |       0.36ms |
-| newton_lbvh_cubql                        |   20 |      23.56ms |      23.53ms |      22.61ms |      23.97ms |       0.35ms |
-| newton_sah_lbvh                          |   20 |      27.49ms |      27.62ms |      26.98ms |      28.52ms |       0.54ms |
-| newton_sah_sah                           |   20 |      24.31ms |      24.33ms |      23.74ms |      24.98ms |       0.43ms |
-| newton_sah_cubql                         |   20 |      21.42ms |      21.48ms |      20.78ms |      22.09ms |       0.39ms |
+| GPU                                      | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|
+| newton_lbvh_lbvh                         |   20 |   0.90 Gpx/s |      74.59ms |      74.52ms |      71.68ms |      76.08ms |       1.21ms |
+| newton_lbvh_sah                          |   20 |   1.02 Gpx/s |      65.77ms |      65.61ms |      62.93ms |      66.89ms |       1.06ms |
+| newton_lbvh_cubql                        |   20 |   1.14 Gpx/s |      59.00ms |      58.71ms |      55.95ms |      59.82ms |       1.05ms |
+| newton_sah_lbvh                          |   20 |   0.98 Gpx/s |      68.24ms |      68.49ms |      66.29ms |      70.41ms |       1.19ms |
+| newton_sah_sah                           |   20 |   1.12 Gpx/s |      60.00ms |      60.07ms |      57.87ms |      61.64ms |       1.02ms |
+| newton_sah_cubql                         |   20 |   1.26 Gpx/s |      53.25ms |      53.40ms |      51.13ms |      54.79ms |       0.98ms |
 
 ## NVIDIA RTX Pro 6000 1/4 MIG 1g.24gb
 
-| PROFILE                                  | SIZE |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
-|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|
-| newton_lbvh_lbvh                         |   20 |     151.55ms |     152.14ms |     147.77ms |     155.57ms |       2.21ms |
-| newton_lbvh_sah                          |   20 |     133.81ms |     133.87ms |     129.58ms |     136.33ms |       1.85ms |
-| newton_lbvh_cubql                        |   20 |     118.58ms |     118.53ms |     113.97ms |     120.91ms |       1.84ms |
-| newton_sah_lbvh                          |   20 |     139.04ms |     139.65ms |     136.48ms |     144.15ms |       2.71ms |
-| newton_sah_sah                           |   20 |     122.68ms |     122.90ms |     120.04ms |     126.18ms |       2.14ms |
-| newton_sah_cubql                         |   20 |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
+| GPU                                      | SIZE |  PIXEL / SEC |    MEDIAN    |     MEAN     |     MIN      |     MAX      |    STDEV     |
+|------------------------------------------|------|--------------|--------------|--------------|--------------|--------------|--------------|
+| newton_lbvh_lbvh                         |   20 |   0.44 Gpx/s |     151.55ms |     152.14ms |     147.77ms |     155.57ms |       2.21ms |
+| newton_lbvh_sah                          |   20 |   0.50 Gpx/s |     133.81ms |     133.87ms |     129.58ms |     136.33ms |       1.85ms |
+| newton_lbvh_cubql                        |   20 |   0.57 Gpx/s |     118.58ms |     118.53ms |     113.97ms |     120.91ms |       1.84ms |
+| newton_sah_lbvh                          |   20 |   0.48 Gpx/s |     139.04ms |     139.65ms |     136.48ms |     144.15ms |       2.71ms |
+| newton_sah_sah                           |   20 |   0.55 Gpx/s |     122.68ms |     122.90ms |     120.04ms |     126.18ms |       2.14ms |
+| newton_sah_cubql                         |   20 |   0.62 Gpx/s |     107.89ms |     108.16ms |     104.69ms |     111.32ms |       2.02ms |
 
 </details>

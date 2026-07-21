@@ -289,13 +289,13 @@ print(
 )
 for profile_name, results in all_results.items():
     if results:
-        gpxs = 1000 / results['median'] * (1024 * 256 * 256) / 1000000000
+        gpxs = 1000 / results["median"] * (1024 * 256 * 256) / 1000000000
         print(
             f"| {profile_name:<40} | {results['size']:>4} | {gpxs:>6.2f} Gpx/s | {results['median']:>10.2f}ms | {results['mean']:>10.2f}ms | {results['min']:>10.2f}ms | {results['max']:>10.2f}ms | {results['stdev']:>10.2f}ms |"  # noqa: E501
         )
     else:
         print(
-            f"| {profile_name:<40} |                                             FAILED                                            |"
+            f"| {profile_name:<40} |                                             FAILED                                            |"  # noqa: E501
         )
         benchmark_faled = True
 print(
