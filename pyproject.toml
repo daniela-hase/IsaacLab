@@ -45,7 +45,7 @@ dependencies = [
     "pytetwild[all]>=0.3.0,<0.4 ; platform_machine == 'aarch64' or platform_machine == 'arm64'",
     "transformers==4.57.6",
     "einops",
-    "warp-lang==1.15.0.dev20260626",
+    "warp-lang>=1.16.0.dev20260716",
     "matplotlib>=3.10.3",
     # pillow: floor, not exact — an exact pin below Isaac Sim's prebundled version forces a
     # downgrade that deletes the prebundled copy other extensions symlink into (nvbugs 6410989).
@@ -167,7 +167,7 @@ torchaudio = "2.11.0"
 ovphysx = "0.5.2+head.f62c22207c"
 ovrtx = ">=0.3.0,<0.4.0"
 # Newton git commit + matching warp-lang prerelease (upgraded together).
-newton = "3ecf06855b3f0a8915a83cbe8eee3046066d47dd"
+newton = "3e069257026f94108a44f9d47961acbc54d8ea65"
 warp = "1.15.0.dev20260626"
 
 [tool.ruff]
@@ -334,7 +334,7 @@ prerelease = "allow"
 # the CUDA indexes via [tool.uv.sources]. Values mirror [tool.isaaclab.versions] above.
 override-dependencies = [
     "numpy>=2",
-    "newton[sim] @ git+https://github.com/newton-physics/newton.git@3ecf06855b3f0a8915a83cbe8eee3046066d47dd",
+    "newton[sim] @ git+https://github.com/newton-physics/newton.git@3e069257026f94108a44f9d47961acbc54d8ea65",
     # Force the Newton-matched schemas over isaacsim's ==0.2.0 pin.
     "newton-usd-schemas>=0.3.1",
     "torch==2.11.0",

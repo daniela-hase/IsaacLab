@@ -89,28 +89,14 @@ def parse_profile(filename: str, renderer: str, num_frames: int):
         ranges = cursor.execute("""
             SELECT n.start, n.end FROM NVTX_EVENTS n
             JOIN StringIds s ON s.id=n.textId
-            WHERE s.value LIKE '%NewtonWarpRenderer.render%'
+            WHERE s.value = 'Newton::SensorTiledCamera::update'
             ORDER BY n.start
         """).fetchall()
 
         out = []
-        for i, (rs, re) in enumerate(ranges):
-            next_rs = ranges[i + 1][0] if i + 1 < len(ranges) else float("inf")
-
-            row = cursor.execute(
-                """
-                SELECT MIN(k.start), MAX(k.end) FROM CUPTI_ACTIVITY_KIND_KERNEL k
-                JOIN StringIds s ON s.id=k.demangledName
-                WHERE k.start>=? AND k.start<? AND s.value LIKE '%render_megakernel%'
-            """,
-                (rs, next_rs),
-            ).fetchone()
-
-            if row[0] is None:
-                continue
-
+        for i, (range_start, range_end) in enumerate(ranges):
             if FRAME_PADDING < i + 1 <= (num_frames + FRAME_PADDING):
-                out.append((row[1] - row[0]) / 1e6)
+                out.append((range_end - range_start) / 1e6)
 
     if out:
         return {
@@ -159,6 +145,7 @@ def run_profile(profile: dict, num_frames: int, num_envs: int, resolution: int, 
 
     if renderer == "newton_renderer":
         trace = "nvtx,cuda"
+        env["NEWTON_PROFILE"] = "1"
         env["NEWTON_BVH_SCENE"] = profile["settings"]["tlas"]
         env["NEWTON_BVH_GEOMETRY"] = profile["settings"]["blas"]
 
@@ -294,8 +281,9 @@ for profile_name, results in all_results.items():
             f"| {profile_name:<40} | {results['size']:>4} | {gpxs:>6.2f} Gpx/s | {results['median']:>10.2f}ms | {results['mean']:>10.2f}ms | {results['min']:>10.2f}ms | {results['max']:>10.2f}ms | {results['stdev']:>10.2f}ms |"  # noqa: E501
         )
     else:
+        log_filename = os.path.join(OUTPUT_PATH, profile_name + ".log")
         print(
-            f"| {profile_name:<40} |                                             FAILED                                            |"  # noqa: E501
+            f"| {profile_name:<40} | FAILED {log_filename:<87} |"
         )
         benchmark_faled = True
 print(
