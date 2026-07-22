@@ -4,7 +4,7 @@
 git clone -b dev/benchmark-franka-cabinet https://github.com/daniela-hase/IsaacLab.git
 
 uv venv --python 3.12
-uv pip install cmake==3.31.6
+uv pip install nvtx cmake==3.31.6
 
 source .venv/bin/activate
 ./isaaclab.sh -i
