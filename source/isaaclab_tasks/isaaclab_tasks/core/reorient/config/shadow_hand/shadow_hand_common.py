@@ -191,10 +191,11 @@ class ObjectCfg(PresetCfg):
                 stabilization_threshold=0.0025,
                 max_depenetration_velocity=1000.0,
             ),
-            mass_props=sim_utils.MassPropertiesCfg(density=567.0),
+            mass_props=sim_utils.MassPropertiesCfg(density=400.0),
             semantic_tags=[("class", "cube")],
+            scale=(0.9, 0.9, 0.9),
         ),
-        init_state=RigidObjectCfg.InitialStateCfg(pos=(0.0, -0.39, 0.6), rot=(0.0, 0.0, 0.0, 1.0)),
+        init_state=RigidObjectCfg.InitialStateCfg(pos=(0.0, -0.36, 0.535), rot=(0.0, 0.0, 0.0, 1.0)),
     )
     isaacsim_physx = physx
 
