@@ -8,6 +8,7 @@ from typing import Any
 from isaaclab_newton.renderers import NewtonWarpRendererCfg
 from isaaclab_ov.renderers import OVRTXRendererCfg
 from isaaclab_physx.renderers import IsaacRtxRendererCfg
+from isaaclab_vulkan.renderers import VulkanWarpRendererCfg
 
 from isaaclab.renderers.renderer_cfg import RendererCfg
 from isaaclab.utils.configclass import configclass
@@ -26,6 +27,7 @@ class MultiBackendRendererCfg(PresetCfg):
     ovrtx: OVRTXRendererCfg = OVRTXRendererCfg()
     isaacsim_rtx: IsaacRtxRendererCfg = IsaacRtxRendererCfg()
     newton_renderer: NewtonWarpRendererCfg = NewtonWarpRendererCfg()
+    vulkan_renderer: VulkanWarpRendererCfg = VulkanWarpRendererCfg()
     default: NewtonWarpRendererCfg = NewtonWarpRendererCfg()
 
 

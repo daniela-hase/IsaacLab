@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=70.0,<82.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "isaaclab_vulkan"
+version = "0.1.0"
+description = "Extension providing IsaacLab with a standalone Vulkan ray tracing renderer backend."
+license = {text = "BSD-3-Clause"}
+authors = [{name = "Isaac Lab Project Developers"}]
+maintainers = [{name = "Isaac Lab Project Developers"}]
+keywords = ["robotics", "simulation", "rendering", "vulkan"]
+requires-python = ">=3.12"
+dependencies = [
+    "isaaclab",
+]
+
+[project.optional-dependencies]
+# The Vulkan ray tracing renderer is imported lazily; install it to enable this backend.
+# When developing against a local checkout, add a matching entry under ``[tool.uv.sources]``:
+#     vulkan-renderer = { path = "../../../vulkan-render-2", editable = true }
+vulkan = ["vulkan-renderer"]
+
+[tool.uv.sources]
+isaaclab = { path = "../isaaclab", editable = true }
+
+[project.urls]
+Homepage = "https://github.com/isaac-sim/IsaacLab"
+Repository = "https://github.com/isaac-sim/IsaacLab"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["isaaclab_vulkan", "isaaclab_vulkan.*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.pyi"]

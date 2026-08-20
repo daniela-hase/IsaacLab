@@ -1764,7 +1764,7 @@ wheels = [
 
 [[package]]
 name = "isaaclab"
-version = "16.2.2"
+version = "16.2.3"
 source = { editable = "source/isaaclab" }
 
 [[package]]
@@ -1823,6 +1823,7 @@ dependencies = [
     { name = "isaaclab-tasks", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "isaaclab-tasks-experimental", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "isaaclab-visualizers", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "isaaclab-vulkan", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "isaacsim-asset-isolated", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "lazy-loader", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "matplotlib", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
@@ -1863,6 +1864,7 @@ dependencies = [
     { name = "trimesh", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "typing-extensions", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "usd-exchange", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "vulkan-renderer", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
     { name = "warp-lang", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
 ]
 
@@ -2023,6 +2025,7 @@ requires-dist = [
     { name = "isaaclab-tasks-experimental", editable = "source/isaaclab_tasks_experimental" },
     { name = "isaaclab-teleop", marker = "extra == 'teleop'", editable = "source/isaaclab_teleop" },
     { name = "isaaclab-visualizers", editable = "source/isaaclab_visualizers" },
+    { name = "isaaclab-vulkan", editable = "source/isaaclab_vulkan" },
     { name = "isaacsim", extras = ["all", "extscache"], marker = "extra == 'isaacsim'", specifier = "==6.0.1.0" },
     { name = "isaacsim", extras = ["all", "extscache"], marker = "extra == 'teleop'", specifier = "==6.0.1.0" },
     { name = "isaacsim-asset-isolated", specifier = ">=6.0,<6.1" },
@@ -2113,6 +2116,7 @@ requires-dist = [
     { name = "typing-extensions", specifier = ">=4.15.0" },
     { name = "usd-exchange", specifier = "==2.3.0" },
     { name = "viser", marker = "extra == 'viser'", specifier = ">=1.0.16" },
+    { name = "vulkan-renderer", git = "https://github.com/NVIDIA-dev/dhasenbring-vulkan-render.git" },
     { name = "warp-lang", specifier = "==1.16.0" },
 ]
 provides-extras = ["tetrahedralization", "video", "test", "sb3", "skrl", "rl-games", "rsl-rl", "viser", "rerun", "isaacsim", "ov", "ovphysx", "ovrtx", "mimic", "teleop", "rlinf", "leapp", "all"]
@@ -2158,7 +2162,7 @@ requires-dist = [{ name = "isaaclab", editable = "source/isaaclab" }]
 
 [[package]]
 name = "isaaclab-ov"
-version = "2.0.3"
+version = "2.0.4"
 source = { editable = "source/isaaclab_ov" }
 dependencies = [
     { name = "isaaclab", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
@@ -2195,7 +2199,7 @@ requires-dist = [{ name = "isaaclab", editable = "source/isaaclab" }]
 
 [[package]]
 name = "isaaclab-rl"
-version = "0.15.0"
+version = "0.16.0"
 source = { editable = "source/isaaclab_rl" }
 dependencies = [
     { name = "isaaclab", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
@@ -2212,7 +2216,7 @@ requires-dist = [
 
 [[package]]
 name = "isaaclab-tasks"
-version = "16.4.0"
+version = "16.5.0"
 source = { editable = "source/isaaclab_tasks" }
 dependencies = [
     { name = "isaaclab", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
@@ -2261,6 +2265,21 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [{ name = "isaaclab", editable = "source/isaaclab" }]
+
+[[package]]
+name = "isaaclab-vulkan"
+version = "0.1.0"
+source = { editable = "source/isaaclab_vulkan" }
+dependencies = [
+    { name = "isaaclab", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "isaaclab", editable = "source/isaaclab" },
+    { name = "vulkan-renderer", marker = "extra == 'vulkan'" },
+]
+provides-extras = ["vulkan"]
 
 [[package]]
 name = "isaacsim"
@@ -5914,6 +5933,30 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/96/f8/b392298c74aa7b88c731a43253ccd50b388bf42a1a29b50fa735c4f22f41/vtk-9.6.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:8c9f31430d15afbf46c2076cf3e30b4d6136512a5faabee8318552ccea907323", size = 146027355, upload-time = "2026-05-19T04:47:22.412Z" },
     { url = "https://files.pythonhosted.org/packages/71/35/67a7760852100c98a8fb6f1221e7eb359ad4d0b1b9edd8beea42c79e16c4/vtk-9.6.2-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:91e1962c93217cf91ca4fe50762dd26dfc22290b74b8b0de77576f93f7c17abb", size = 135789817, upload-time = "2026-05-19T04:47:27.551Z" },
     { url = "https://files.pythonhosted.org/packages/b4/61/58e162d9cdbf02a3578ef4e68f4003b8cb9f351b7aa409960da3cc383017/vtk-9.6.2-cp312-cp312-win_amd64.whl", hash = "sha256:83b4af00b31395a13acb20e26a42ee097b85e41a0a087be2340d3749cb58250f", size = 81305902, upload-time = "2026-05-19T04:47:32.305Z" },
+]
+
+[[package]]
+name = "vulkan"
+version = "1.3.275.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cffi", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/83/39/b78fbd27b8f0941a959fb49e1685589ee8d54fa08881c671b95f64390f4c/vulkan-1.3.275.1.tar.gz", hash = "sha256:5cf7961cb4a4e60d063eb815147c2289244575b75a4512089cc6e8a959b996d2", size = 325786, upload-time = "2024-02-27T10:12:34.537Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f7/e5/7b28a123d33fc9c3d55383628fc38322c890a97dfa2c538a7638cd71d57f/vulkan-1.3.275.1-py3-none-any.whl", hash = "sha256:e1e0ddf57d3a7d19f79ebf1e192b20dbd378172b027cad4f495d961b51409586", size = 399747, upload-time = "2024-02-27T10:12:32.705Z" },
+]
+
+[[package]]
+name = "vulkan-renderer"
+version = "0.1.0"
+source = { git = "https://github.com/NVIDIA-dev/dhasenbring-vulkan-render.git#8a2f50a7fcbb176cd79cb1d10a529c21a8c66455" }
+dependencies = [
+    { name = "numpy", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "pyglet", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "pyopengl", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "vulkan", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
+    { name = "warp-lang", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or (platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine == 'AMD64' and sys_platform == 'win32')" },
 ]
 
 [[package]]

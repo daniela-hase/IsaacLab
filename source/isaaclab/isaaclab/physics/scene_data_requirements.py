@@ -36,6 +36,8 @@ _RENDERER_REQUIREMENTS: dict[str, SceneDataRequirement] = {
     "isaac_rtx": SceneDataRequirement(requires_usd_stage=True),
     "newton_warp": SceneDataRequirement(requires_newton_model=True),
     "ovrtx": SceneDataRequirement(requires_newton_model=True, requires_usd_stage=True),
+    # The Vulkan backend walks the USD stage for geometry and drives it from provider transforms.
+    "vulkan_rt": SceneDataRequirement(requires_usd_stage=True),
 }
 
 
