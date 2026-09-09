@@ -9,17 +9,17 @@
 
 ## Install Path Routing
 
-Ask which install path the user is following before prescribing commands. For a new full-feature Isaac Sim setup, route to the pip/uv guide first.
+Ask which install path the user is following before prescribing commands. For a new full-feature Isaac Sim setup, route to the automatic uv guide first.
 
 | User context | First reference |
 | --- | --- |
-| Source checkout | `docs/source/setup/installation/source_installation.rst` |
-| uv-managed environment | `docs/source/setup/quickstart.rst` and `docs/source/setup/installation/uv_run.rst` |
-| Pip package | `docs/source/setup/installation/pip_installation.rst` |
-| Isaac Lab pip package | `docs/source/setup/installation/isaaclab_pip_installation.rst` |
-| Binary package | `docs/source/setup/installation/binaries_installation.rst` |
-| Cloud setup | `docs/source/setup/installation/cloud_installation.rst` |
-| Kit-less setup | `docs/source/setup/installation/kitless_installation.rst` |
+| Source checkout | `docs/source/setup/installation/index.rst` |
+| uv-managed environment | `docs/source/setup/quickstart.rst` and `docs/source/setup/installation/index.rst` |
+| Pip package | `docs/source/setup/installation/index.rst` |
+| Isaac Lab pip package | `docs/source/setup/installation/index.rst` |
+| Binary package | `docs/source/setup/installation/index.rst` |
+| Cloud setup | `docs/source/features/docker_cloud.rst` |
+| Legacy installer or setup without Isaac Sim | `docs/source/setup/installation/index.rst` |
 | Newton setup | `docs/source/overview/core-concepts/physical-backends/newton/installation.rst` |
 | PhysX setup | `docs/source/overview/core-concepts/physical-backends/physx/installation.rst` |
 
@@ -53,7 +53,9 @@ uv run isaaclab train --rl_library rsl_rl --task Isaac-Cartpole --max_iterations
 | Task registration fails | Gym registration and task package import |
 | Backend preset fails | `uv run python scripts/environments/list_envs.py --show_presets` |
 | Camera or renderer fails | Renderer selection and sensor docs |
+| `LIVESTREAM=1`/`2` fails with `NVST_R_BUSY` or `NVST_R_INTERNAL_ERROR` | Livestreaming and WebRTC section of `docs/source/refs/troubleshooting.rst` (stale process still bound to TCP port 49100) |
 | Training starts but shapes fail | Environment reset/step smoke test before runner |
+| Simulation or training throughput is poor | Performance troubleshooting, then Nsight Systems profiling |
 
 ## Escalation Checklist
 
